@@ -1,0 +1,5 @@
+const CACHE='cremerce-v20-embedded-logo-and-app-icons';
+const CORE=['./','./index.html','./manifest.webmanifest','./offline.html','./favicon.ico','./cremerce-favicon-16-v20.png','./cremerce-favicon-32-v20.png','./cremerce-favicon-48-v20.png','./apple-touch-icon.png','./apple-touch-icon-v20.png','./apple-touch-icon-120-v20.png','./apple-touch-icon-152-v20.png','./apple-touch-icon-167-v20.png','./cremerce-app-192-v20.png','./cremerce-app-512-v20.png','./cremerce-app-maskable-512-v20.png','./icon-1024.png'];
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;event.respondWith(fetch(event.request).then(response=>{const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));return response}).catch(()=>caches.match(event.request).then(cached=>cached||caches.match('./offline.html'))))});

@@ -1,0 +1,30 @@
+CREMERCE auf GitHub Pages veröffentlichen
+=========================================
+
+Wichtig: Im ZIP liegen index.html, manifest.webmanifest, service-worker.js,
+favicon.ico, logo.png, apple-touch-icon.png und alle icon-Dateien direkt auf der obersten
+Ebene. Genau diese Struktur vollständig in das veröffentlichte GitHub-Repository
+hochladen. Die Dateien dürfen nicht in einen zusätzlichen Unterordner wie
+"dist" oder "CREMERCE" gelegt werden.
+
+GitHub Pages
+------------
+1. Alle bisherigen Website-Dateien im Repository durch den Inhalt dieses ZIPs
+   ersetzen beziehungsweise die Dateien mit gleichem Namen überschreiben.
+2. Unter Settings > Pages kontrollieren, dass der richtige Branch und der
+   Ordner /(root) veröffentlicht werden.
+3. Warten, bis GitHub Pages die neue Version veröffentlicht hat.
+4. Die HTTPS-Adresse im Browser öffnen und einmal mit Strg+F5 neu laden.
+
+iPhone/iPad
+-----------
+1. Das bisherige CREMERCE-Icon vom Home-Bildschirm entfernen.
+2. Safari vollständig schließen und erneut öffnen.
+3. Die GitHub-Pages-Adresse in Safari öffnen.
+4. Teilen > Zum Home-Bildschirm > Hinzufügen wählen.
+
+Das sichtbare Logo in CREMERCE ist direkt als PNG in index.html eingebettet und
+kann deshalb nicht mehr durch einen fehlenden Bildpfad ersetzt werden. Die
+Browser- und App-Icons liegen zusätzlich direkt im Hauptverzeichnis.
+Diese Struktur ist speziell auf https://soulfullofenergy.github.io/CREMERCE2/
+abgestimmt und darf beim Hochladen nicht verändert werden.
